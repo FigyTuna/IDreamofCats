@@ -1,0 +1,229 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/InstView.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/InstRack.gd" type="Script" id=2]
+[ext_resource path="res://scenes/FMASynth.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Recorder.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/GraphPlayer.tscn" type="PackedScene" id=5]
+
+[node name="InstRack" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstView" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1021.0
+margin_bottom = 351.0
+
+[node name="NumBeats" type="SpinBox" parent="."]
+margin_left = 875.0
+margin_top = 35.0
+margin_right = 949.0
+margin_bottom = 59.0
+min_value = 1.0
+max_value = 32.0
+value = 8.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BPM" type="SpinBox" parent="."]
+margin_left = 882.0
+margin_top = 260.0
+margin_right = 956.0
+margin_bottom = 284.0
+min_value = 10.0
+max_value = 300.0
+value = 120.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 806.0
+margin_top = 375.0
+margin_right = 971.0
+margin_bottom = 539.0
+color = Color( 1, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 733.381
+margin_top = 496.953
+margin_right = 773.381
+margin_bottom = 510.953
+text = "test"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NodesList" type="Label" parent="."]
+margin_left = 1019.17
+margin_top = 22.7163
+margin_right = 1447.17
+margin_bottom = 566.716
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TracksList" type="Label" parent="."]
+margin_left = 1360.46
+margin_top = 28.8312
+margin_right = 1788.46
+margin_bottom = 572.836
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 726.165
+margin_top = 198.737
+margin_right = 766.165
+margin_bottom = 212.737
+text = "test"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 823.165
+margin_top = 227.737
+margin_right = 863.165
+margin_bottom = 241.737
+text = "test"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Synths" type="Node" parent="."]
+
+[node name="FMASynth" parent="Synths" instance=ExtResource( 3 )]
+
+[node name="FMASynth2" parent="Synths" instance=ExtResource( 3 )]
+
+[node name="FMASynth3" parent="Synths" instance=ExtResource( 3 )]
+
+[node name="FMASynth4" parent="Synths" instance=ExtResource( 3 )]
+
+[node name="FMASynth5" parent="Synths" instance=ExtResource( 3 )]
+
+[node name="Recorder" parent="." instance=ExtResource( 4 )]
+
+[node name="GraphPlayer" parent="." instance=ExtResource( 5 )]
+
+[node name="WriteAll" type="Button" parent="."]
+margin_left = 880.0
+margin_top = 304.0
+margin_right = 948.0
+margin_bottom = 324.0
+text = "Write All"
+
+[node name="TrackName" type="TextEdit" parent="."]
+margin_left = 823.0
+margin_top = 78.0
+margin_right = 981.0
+margin_bottom = 105.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NodeName" type="TextEdit" parent="."]
+margin_left = 36.0
+margin_top = 493.0
+margin_right = 217.0
+margin_bottom = 518.0
+
+[node name="Tracks" type="TextEdit" parent="."]
+margin_left = 232.0
+margin_top = 428.0
+margin_right = 381.0
+margin_bottom = 585.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Defaults" type="TextEdit" parent="."]
+margin_left = 398.0
+margin_top = 427.0
+margin_right = 547.0
+margin_bottom = 584.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Alts" type="TextEdit" parent="."]
+margin_left = 557.0
+margin_top = 430.0
+margin_right = 706.0
+margin_bottom = 587.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NodeBPM" type="SpinBox" parent="."]
+margin_left = 97.0
+margin_top = 456.0
+margin_right = 171.0
+margin_bottom = 480.0
+min_value = 10.0
+max_value = 300.0
+value = 120.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SaveNode" type="Button" parent="."]
+margin_left = 88.0
+margin_top = 538.0
+margin_right = 167.0
+margin_bottom = 558.0
+text = "Save Node"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadNode" type="Button" parent="."]
+margin_left = 91.0
+margin_top = 566.0
+margin_right = 170.0
+margin_bottom = 586.0
+text = "Load Node"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="OptionButton" parent="."]
+margin_left = 764.0
+margin_top = 557.0
+margin_right = 793.0
+margin_bottom = 577.0
+
+[node name="Stop" type="Button" parent="."]
+margin_left = 851.0
+margin_top = 557.0
+margin_right = 863.0
+margin_bottom = 577.0
+text = "Stop"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="value_changed" from="NumBeats" to="." method="_on_NumBeats_value_changed"]
+[connection signal="value_changed" from="BPM" to="." method="_on_BPM_value_changed"]
+[connection signal="cc" from="GraphPlayer" to="." method="_on_GraphPlayer_cc"]
+[connection signal="change_preset" from="GraphPlayer" to="." method="_on_GraphPlayer_change_preset"]
+[connection signal="display_time" from="GraphPlayer" to="." method="_on_GraphPlayer_display_time"]
+[connection signal="note_off" from="GraphPlayer" to="." method="_on_GraphPlayer_note_off"]
+[connection signal="note_on" from="GraphPlayer" to="." method="_on_GraphPlayer_note_on"]
+[connection signal="start_node" from="GraphPlayer" to="." method="_on_GraphPlayer_start_node"]
+[connection signal="pressed" from="WriteAll" to="." method="_on_WriteAll_pressed"]
+[connection signal="pressed" from="SaveNode" to="." method="_on_SaveNode_pressed"]
+[connection signal="pressed" from="LoadNode" to="." method="_on_LoadNode_pressed"]
+[connection signal="item_selected" from="Play" to="." method="_on_Play_item_selected"]
+[connection signal="pressed" from="Stop" to="." method="_on_Stop_pressed"]

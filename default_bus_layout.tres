@@ -1,0 +1,184 @@
+[gd_resource type="AudioBusLayout" load_steps=31 format=2]
+
+[sub_resource type="AudioEffectFilter" id=1]
+resource_name = "Filter"
+
+[sub_resource type="AudioEffectDistortion" id=2]
+resource_name = "Distortion"
+
+[sub_resource type="AudioEffectChorus" id=3]
+resource_name = "Chorus"
+
+[sub_resource type="AudioEffectPhaser" id=4]
+resource_name = "Phaser"
+
+[sub_resource type="AudioEffectDelay" id=5]
+resource_name = "Delay"
+
+[sub_resource type="AudioEffectReverb" id=6]
+resource_name = "Reverb"
+
+[sub_resource type="AudioEffectFilter" id=7]
+resource_name = "Filter"
+
+[sub_resource type="AudioEffectDistortion" id=8]
+resource_name = "Distortion"
+
+[sub_resource type="AudioEffectChorus" id=9]
+resource_name = "Chorus"
+
+[sub_resource type="AudioEffectPhaser" id=10]
+resource_name = "Phaser"
+
+[sub_resource type="AudioEffectDelay" id=11]
+resource_name = "Delay"
+
+[sub_resource type="AudioEffectReverb" id=12]
+resource_name = "Reverb"
+
+[sub_resource type="AudioEffectFilter" id=13]
+resource_name = "Filter"
+
+[sub_resource type="AudioEffectDistortion" id=14]
+resource_name = "Distortion"
+
+[sub_resource type="AudioEffectChorus" id=15]
+resource_name = "Chorus"
+
+[sub_resource type="AudioEffectPhaser" id=16]
+resource_name = "Phaser"
+
+[sub_resource type="AudioEffectDelay" id=17]
+resource_name = "Delay"
+
+[sub_resource type="AudioEffectReverb" id=18]
+resource_name = "Reverb"
+
+[sub_resource type="AudioEffectFilter" id=19]
+resource_name = "Filter"
+
+[sub_resource type="AudioEffectDistortion" id=20]
+resource_name = "Distortion"
+
+[sub_resource type="AudioEffectChorus" id=21]
+resource_name = "Chorus"
+
+[sub_resource type="AudioEffectPhaser" id=22]
+resource_name = "Phaser"
+
+[sub_resource type="AudioEffectDelay" id=23]
+resource_name = "Delay"
+
+[sub_resource type="AudioEffectReverb" id=24]
+resource_name = "Reverb"
+
+[sub_resource type="AudioEffectFilter" id=25]
+resource_name = "Filter"
+
+[sub_resource type="AudioEffectDistortion" id=26]
+resource_name = "Distortion"
+
+[sub_resource type="AudioEffectChorus" id=27]
+resource_name = "Chorus"
+
+[sub_resource type="AudioEffectPhaser" id=28]
+resource_name = "Phaser"
+
+[sub_resource type="AudioEffectDelay" id=29]
+resource_name = "Delay"
+feedback/level_db = -8.19
+
+[sub_resource type="AudioEffectReverb" id=30]
+resource_name = "Reverb"
+
+[resource]
+bus/1/name = "Env1"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -1.12151
+bus/1/send = "Master"
+bus/1/effect/0/effect = SubResource( 1 )
+bus/1/effect/0/enabled = false
+bus/1/effect/1/effect = SubResource( 2 )
+bus/1/effect/1/enabled = false
+bus/1/effect/2/effect = SubResource( 3 )
+bus/1/effect/2/enabled = false
+bus/1/effect/3/effect = SubResource( 4 )
+bus/1/effect/3/enabled = false
+bus/1/effect/4/effect = SubResource( 5 )
+bus/1/effect/4/enabled = false
+bus/1/effect/5/effect = SubResource( 6 )
+bus/1/effect/5/enabled = false
+bus/2/name = "Env2"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = "Master"
+bus/2/effect/0/effect = SubResource( 7 )
+bus/2/effect/0/enabled = false
+bus/2/effect/1/effect = SubResource( 8 )
+bus/2/effect/1/enabled = false
+bus/2/effect/2/effect = SubResource( 9 )
+bus/2/effect/2/enabled = false
+bus/2/effect/3/effect = SubResource( 10 )
+bus/2/effect/3/enabled = false
+bus/2/effect/4/effect = SubResource( 11 )
+bus/2/effect/4/enabled = false
+bus/2/effect/5/effect = SubResource( 12 )
+bus/2/effect/5/enabled = false
+bus/3/name = "Env3"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = "Master"
+bus/3/effect/0/effect = SubResource( 13 )
+bus/3/effect/0/enabled = false
+bus/3/effect/1/effect = SubResource( 14 )
+bus/3/effect/1/enabled = false
+bus/3/effect/2/effect = SubResource( 15 )
+bus/3/effect/2/enabled = false
+bus/3/effect/3/effect = SubResource( 16 )
+bus/3/effect/3/enabled = false
+bus/3/effect/4/effect = SubResource( 17 )
+bus/3/effect/4/enabled = false
+bus/3/effect/5/effect = SubResource( 18 )
+bus/3/effect/5/enabled = false
+bus/4/name = "Env4"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = 0.0
+bus/4/send = "Master"
+bus/4/effect/0/effect = SubResource( 19 )
+bus/4/effect/0/enabled = false
+bus/4/effect/1/effect = SubResource( 20 )
+bus/4/effect/1/enabled = false
+bus/4/effect/2/effect = SubResource( 21 )
+bus/4/effect/2/enabled = false
+bus/4/effect/3/effect = SubResource( 22 )
+bus/4/effect/3/enabled = false
+bus/4/effect/4/effect = SubResource( 23 )
+bus/4/effect/4/enabled = false
+bus/4/effect/5/effect = SubResource( 24 )
+bus/4/effect/5/enabled = false
+bus/5/name = "Env5"
+bus/5/solo = false
+bus/5/mute = false
+bus/5/bypass_fx = false
+bus/5/volume_db = 0.0
+bus/5/send = "Master"
+bus/5/effect/0/effect = SubResource( 25 )
+bus/5/effect/0/enabled = false
+bus/5/effect/1/effect = SubResource( 26 )
+bus/5/effect/1/enabled = false
+bus/5/effect/2/effect = SubResource( 27 )
+bus/5/effect/2/enabled = false
+bus/5/effect/3/effect = SubResource( 28 )
+bus/5/effect/3/enabled = false
+bus/5/effect/4/effect = SubResource( 29 )
+bus/5/effect/4/enabled = false
+bus/5/effect/5/effect = SubResource( 30 )
+bus/5/effect/5/enabled = false

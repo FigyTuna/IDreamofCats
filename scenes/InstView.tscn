@@ -1,0 +1,453 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Knob.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/InstView.gd" type="Script" id=2]
+
+[node name="InstView" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 790.0
+margin_bottom = 423.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 783.0
+margin_bottom = 416.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/HBoxContainer"]
+margin_right = 695.0
+margin_bottom = 409.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel0" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
+margin_right = 170.0
+margin_bottom = 202.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/HBoxContainer/GridContainer/Panel0"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 163.0
+margin_bottom = 195.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Knob0" parent="PanelContainer/HBoxContainer/GridContainer/Panel0/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 76.0
+margin_bottom = 92.0
+
+[node name="Knob1" parent="PanelContainer/HBoxContainer/GridContainer/Panel0/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_right = 156.0
+margin_bottom = 92.0
+
+[node name="Knob2" parent="PanelContainer/HBoxContainer/GridContainer/Panel0/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 96.0
+margin_right = 76.0
+margin_bottom = 188.0
+
+[node name="Knob3" parent="PanelContainer/HBoxContainer/GridContainer/Panel0/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 96.0
+margin_right = 156.0
+margin_bottom = 188.0
+
+[node name="Panel1" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
+margin_left = 174.0
+margin_right = 344.0
+margin_bottom = 202.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/HBoxContainer/GridContainer/Panel1"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 163.0
+margin_bottom = 195.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Knob0" parent="PanelContainer/HBoxContainer/GridContainer/Panel1/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 76.0
+margin_bottom = 92.0
+
+[node name="Knob1" parent="PanelContainer/HBoxContainer/GridContainer/Panel1/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_right = 156.0
+margin_bottom = 92.0
+
+[node name="Knob2" parent="PanelContainer/HBoxContainer/GridContainer/Panel1/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 96.0
+margin_right = 76.0
+margin_bottom = 188.0
+
+[node name="Knob3" parent="PanelContainer/HBoxContainer/GridContainer/Panel1/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 96.0
+margin_right = 156.0
+margin_bottom = 188.0
+
+[node name="Panel2" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
+margin_left = 348.0
+margin_right = 518.0
+margin_bottom = 202.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/HBoxContainer/GridContainer/Panel2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 163.0
+margin_bottom = 195.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Knob0" parent="PanelContainer/HBoxContainer/GridContainer/Panel2/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 76.0
+margin_bottom = 92.0
+
+[node name="Knob1" parent="PanelContainer/HBoxContainer/GridContainer/Panel2/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_right = 156.0
+margin_bottom = 92.0
+
+[node name="Knob2" parent="PanelContainer/HBoxContainer/GridContainer/Panel2/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 96.0
+margin_right = 76.0
+margin_bottom = 188.0
+
+[node name="Knob3" parent="PanelContainer/HBoxContainer/GridContainer/Panel2/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 96.0
+margin_right = 156.0
+margin_bottom = 188.0
+
+[node name="Panel3" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
+margin_left = 522.0
+margin_right = 692.0
+margin_bottom = 202.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/HBoxContainer/GridContainer/Panel3"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 163.0
+margin_bottom = 195.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Knob0" parent="PanelContainer/HBoxContainer/GridContainer/Panel3/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 76.0
+margin_bottom = 92.0
+
+[node name="Knob1" parent="PanelContainer/HBoxContainer/GridContainer/Panel3/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_right = 156.0
+margin_bottom = 92.0
+
+[node name="Knob2" parent="PanelContainer/HBoxContainer/GridContainer/Panel3/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 96.0
+margin_right = 76.0
+margin_bottom = 188.0
+
+[node name="Knob3" parent="PanelContainer/HBoxContainer/GridContainer/Panel3/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 96.0
+margin_right = 156.0
+margin_bottom = 188.0
+
+[node name="Panel4" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
+margin_top = 206.0
+margin_right = 170.0
+margin_bottom = 408.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/HBoxContainer/GridContainer/Panel4"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 163.0
+margin_bottom = 195.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Knob0" parent="PanelContainer/HBoxContainer/GridContainer/Panel4/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 76.0
+margin_bottom = 92.0
+
+[node name="Knob1" parent="PanelContainer/HBoxContainer/GridContainer/Panel4/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_right = 156.0
+margin_bottom = 92.0
+
+[node name="Knob2" parent="PanelContainer/HBoxContainer/GridContainer/Panel4/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 96.0
+margin_right = 76.0
+margin_bottom = 188.0
+
+[node name="Knob3" parent="PanelContainer/HBoxContainer/GridContainer/Panel4/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 96.0
+margin_right = 156.0
+margin_bottom = 188.0
+
+[node name="Panel5" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
+margin_left = 174.0
+margin_top = 206.0
+margin_right = 344.0
+margin_bottom = 408.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/HBoxContainer/GridContainer/Panel5"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 163.0
+margin_bottom = 195.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Knob0" parent="PanelContainer/HBoxContainer/GridContainer/Panel5/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 76.0
+margin_bottom = 92.0
+
+[node name="Knob1" parent="PanelContainer/HBoxContainer/GridContainer/Panel5/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_right = 156.0
+margin_bottom = 92.0
+
+[node name="Knob2" parent="PanelContainer/HBoxContainer/GridContainer/Panel5/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 96.0
+margin_right = 76.0
+margin_bottom = 188.0
+
+[node name="Knob3" parent="PanelContainer/HBoxContainer/GridContainer/Panel5/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 96.0
+margin_right = 156.0
+margin_bottom = 188.0
+
+[node name="Panel6" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
+margin_left = 348.0
+margin_top = 206.0
+margin_right = 518.0
+margin_bottom = 408.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/HBoxContainer/GridContainer/Panel6"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 163.0
+margin_bottom = 195.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Knob0" parent="PanelContainer/HBoxContainer/GridContainer/Panel6/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 76.0
+margin_bottom = 92.0
+
+[node name="Knob1" parent="PanelContainer/HBoxContainer/GridContainer/Panel6/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_right = 156.0
+margin_bottom = 92.0
+
+[node name="Knob2" parent="PanelContainer/HBoxContainer/GridContainer/Panel6/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 96.0
+margin_right = 76.0
+margin_bottom = 188.0
+
+[node name="Knob3" parent="PanelContainer/HBoxContainer/GridContainer/Panel6/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 96.0
+margin_right = 156.0
+margin_bottom = 188.0
+
+[node name="Panel7" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
+margin_left = 522.0
+margin_top = 206.0
+margin_right = 692.0
+margin_bottom = 408.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/HBoxContainer/GridContainer/Panel7"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 163.0
+margin_bottom = 195.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Knob0" parent="PanelContainer/HBoxContainer/GridContainer/Panel7/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 76.0
+margin_bottom = 92.0
+
+[node name="Knob1" parent="PanelContainer/HBoxContainer/GridContainer/Panel7/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_right = 156.0
+margin_bottom = 92.0
+
+[node name="Knob2" parent="PanelContainer/HBoxContainer/GridContainer/Panel7/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 96.0
+margin_right = 76.0
+margin_bottom = 188.0
+
+[node name="Knob3" parent="PanelContainer/HBoxContainer/GridContainer/Panel7/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 96.0
+margin_right = 156.0
+margin_bottom = 188.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+margin_left = 699.0
+margin_right = 776.0
+margin_bottom = 409.0
+size_flags_vertical = 3
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+margin_right = 77.0
+margin_bottom = 24.0
+
+[node name="SaveButton" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 28.0
+margin_right = 77.0
+margin_bottom = 48.0
+text = "Save"
+
+[node name="OptionButton" type="OptionButton" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 52.0
+margin_right = 77.0
+margin_bottom = 72.0
+text = "Presets"
+
+[node name="DeleteButton" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 76.0
+margin_right = 77.0
+margin_bottom = 96.0
+text = "Delete"
+[connection signal="pressed" from="PanelContainer/HBoxContainer/VBoxContainer/SaveButton" to="." method="_on_SaveButton_pressed"]
+[connection signal="item_selected" from="PanelContainer/HBoxContainer/VBoxContainer/OptionButton" to="." method="_on_OptionButton_item_selected"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/VBoxContainer/DeleteButton" to="." method="_on_DeleteButton_pressed"]

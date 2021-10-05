@@ -1,0 +1,182 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scenes/game/Dog.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/game/Game.gd" type="Script" id=2]
+[ext_resource path="res://scenes/FMASynth.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/GraphPlayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/InstView.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/game/Title.tscn" type="PackedScene" id=7]
+[ext_resource path="res://palettes/p7.tres" type="Texture" id=8]
+
+[sub_resource type="Shader" id=1]
+code = "/* 
+Earthbound battle backgrounds shader with scrolling effect and palette cycling like in the original game.
+@retr0_dev
+	
+Apply the shader to a TextureRect or a Sprite. Use a texture with some shapes in a transparent background for best results.
+You can then use a ColorRect or another method to paint the background.
+You can use the shader on multiple TextureRects and obtain a double-buffer effect tweaking the values for each one, remember to Make Unique the shader material.
+*/
+shader_type canvas_item;
+
+uniform float screen_height = 900.0;
+uniform float amplitude = 0.075;
+uniform float frequency = 10.0;
+uniform float speed = 2.0;
+uniform float amplitude_vertical = 0.0;
+uniform float frequency_vertical = 0.0;
+uniform float speed_vertical = 0.0;
+uniform vec2 scroll_direction = vec2(0.0, 0.0);
+uniform float scrolling_speed = 0.08;
+uniform bool enable_palette_cycling = false;
+uniform sampler2D palette;
+uniform float palette_speed = 0.1;
+uniform vec2 offset = vec2(0.0, 0.0);
+
+void fragment()
+{
+	float diff_x = amplitude * sin((frequency * UV.y) + (speed * TIME));
+	float diff_y = amplitude_vertical * sin((frequency_vertical * UV.y)  + (speed_vertical * TIME));
+	vec2 scroll = scroll_direction * TIME * scrolling_speed;
+	vec4 tex = texture(TEXTURE, vec2(UV.x + diff_x + offset.x, UV.y + diff_y + offset.y) + scroll);
+	float palette_swap = mod(tex.r - TIME * palette_speed, 1.0);
+	
+	if (enable_palette_cycling)
+	{
+		COLOR = vec4(texture(palette, vec2(palette_swap, 0)).rgb, tex.a);
+	}
+	else COLOR = tex;
+	COLOR = mix(vec4(0.0), COLOR, float(int(UV.y * screen_height) % 2));
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/screen_height = 900.0
+shader_param/amplitude = 0.075
+shader_param/frequency = 5.0
+shader_param/speed = 2.0
+shader_param/amplitude_vertical = 0.0
+shader_param/frequency_vertical = 0.0
+shader_param/speed_vertical = 0.0
+shader_param/scroll_direction = Vector2( 0, 0 )
+shader_param/scrolling_speed = 0.08
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 0.06
+shader_param/offset = Vector2( 0, 0 )
+shader_param/palette = ExtResource( 8 )
+
+[sub_resource type="Shader" id=3]
+code = "/* 
+Earthbound battle backgrounds shader with scrolling effect and palette cycling like in the original game.
+@retr0_dev
+	
+Apply the shader to a TextureRect or a Sprite. Use a texture with some shapes in a transparent background for best results.
+You can then use a ColorRect or another method to paint the background.
+You can use the shader on multiple TextureRects and obtain a double-buffer effect tweaking the values for each one, remember to Make Unique the shader material.
+*/
+shader_type canvas_item;
+
+uniform float screen_height = 900.0;
+uniform float amplitude = 0.075;
+uniform float frequency = 10.0;
+uniform float speed = 2.0;
+uniform float amplitude_vertical = 0.0;
+uniform float frequency_vertical = 0.0;
+uniform float speed_vertical = 0.0;
+uniform vec2 scroll_direction = vec2(0.0, 0.0);
+uniform float scrolling_speed = 0.08;
+uniform bool enable_palette_cycling = false;
+uniform sampler2D palette;
+uniform float palette_speed = 0.1;
+uniform vec2 offset = vec2(0.0, 0.0);
+
+void fragment()
+{
+	float diff_x = amplitude * sin((frequency * UV.y) + (speed * TIME));
+	float diff_y = amplitude_vertical * sin((frequency_vertical * UV.y)  + (speed_vertical * TIME));
+	vec2 scroll = scroll_direction * TIME * scrolling_speed;
+	vec4 tex = texture(TEXTURE, vec2(UV.x + diff_x + offset.x, UV.y + diff_y + offset.y) + scroll);
+	float palette_swap = mod(tex.r - TIME * palette_speed, 1.0);
+	
+	if (enable_palette_cycling)
+	{
+		COLOR = vec4(texture(palette, vec2(palette_swap, 0)).rgb, tex.a);
+	}
+	else COLOR = tex;
+	COLOR = mix(vec4(0.0), COLOR, float(int(UV.y * screen_height) % 2));
+}"
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
+shader_param/screen_height = 900.0
+shader_param/amplitude = 0.075
+shader_param/frequency = 10.0
+shader_param/speed = 2.0
+shader_param/amplitude_vertical = 0.0
+shader_param/frequency_vertical = 0.0
+shader_param/speed_vertical = 0.0
+shader_param/scroll_direction = Vector2( 0, 0 )
+shader_param/scrolling_speed = 0.08
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 0.1
+shader_param/offset = Vector2( 0, 0 )
+shader_param/palette = ExtResource( 8 )
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+margin_right = 1600.0
+margin_bottom = 900.0
+color = Color( 0.00392157, 0.0156863, 0.164706, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BGA" type="TextureRect" parent="Background"]
+material = SubResource( 2 )
+margin_right = 1600.0
+margin_bottom = 900.0
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BGB" type="TextureRect" parent="Background"]
+material = SubResource( 4 )
+margin_right = 1600.0
+margin_bottom = 900.0
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cats" type="Node2D" parent="."]
+
+[node name="Dog" parent="." instance=ExtResource( 1 )]
+position = Vector2( 800, 450 )
+
+[node name="GraphPlayer" parent="." instance=ExtResource( 5 )]
+
+[node name="InstView" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="Synths" type="Node" parent="."]
+
+[node name="FMASynth" parent="Synths" instance=ExtResource( 4 )]
+
+[node name="FMASynth2" parent="Synths" instance=ExtResource( 4 )]
+
+[node name="FMASynth3" parent="Synths" instance=ExtResource( 4 )]
+
+[node name="FMASynth4" parent="Synths" instance=ExtResource( 4 )]
+
+[node name="FMASynth5" parent="Synths" instance=ExtResource( 4 )]
+
+[node name="Title" parent="." instance=ExtResource( 7 )]
+[connection signal="cc" from="GraphPlayer" to="." method="_on_GraphPlayer_cc"]
+[connection signal="change_preset" from="GraphPlayer" to="." method="_on_GraphPlayer_change_preset"]
+[connection signal="note_off" from="GraphPlayer" to="." method="_on_GraphPlayer_note_off"]
+[connection signal="note_on" from="GraphPlayer" to="." method="_on_GraphPlayer_note_on"]

@@ -1,0 +1,118 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://scenes/game/Title.gd" type="Script" id=1]
+[ext_resource path="res://scenes/game/Ending.tscn" type="PackedScene" id=2]
+[ext_resource path="res://images/DogFrame.png" type="Texture" id=3]
+[ext_resource path="res://images/TitleWhiteBorder.png" type="Texture" id=4]
+[ext_resource path="res://images/Cats/CatSpooky.png" type="Texture" id=5]
+[ext_resource path="res://images/Cats/CatSit.png" type="Texture" id=6]
+[ext_resource path="res://images/Cats/CatFuzzy.png" type="Texture" id=7]
+[ext_resource path="res://images/Cats/CatCrouch.png" type="Texture" id=8]
+[ext_resource path="res://images/Cats/CatSleep.png" type="Texture" id=9]
+[ext_resource path="res://images/1of5.png" type="Texture" id=10]
+[ext_resource path="res://images/4of5.png" type="Texture" id=11]
+[ext_resource path="res://images/3of5.png" type="Texture" id=12]
+[ext_resource path="res://images/2of5.png" type="Texture" id=13]
+[ext_resource path="res://images/All.png" type="Texture" id=14]
+
+[sub_resource type="Animation" id=1]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Title" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1600.0
+margin_bottom = 900.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleStuff" type="Node2D" parent="."]
+
+[node name="Ending1" parent="TitleStuff" instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 1363.13, 261.118 )
+rotation = 0.0917882
+texture = ExtResource( 6 )
+
+[node name="Ending2" parent="TitleStuff" instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 242.975, 506.939 )
+rotation = -0.056895
+texture = ExtResource( 7 )
+
+[node name="Ending3" parent="TitleStuff" instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 191.47, 318.169 )
+rotation = 0.0596062
+texture = ExtResource( 9 )
+
+[node name="Ending4" parent="TitleStuff" instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 1355.72, 523.623 )
+rotation = 0.0288174
+texture = ExtResource( 5 )
+
+[node name="Ending5" parent="TitleStuff" instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 1141.59, 403.984 )
+rotation = -0.00930244
+texture = ExtResource( 8 )
+
+[node name="one" type="Sprite" parent="TitleStuff"]
+visible = false
+position = Vector2( 904.818, 685.757 )
+texture = ExtResource( 10 )
+
+[node name="two" type="Sprite" parent="TitleStuff"]
+visible = false
+position = Vector2( 904.818, 685.757 )
+texture = ExtResource( 13 )
+
+[node name="three" type="Sprite" parent="TitleStuff"]
+visible = false
+position = Vector2( 904.818, 685.757 )
+texture = ExtResource( 12 )
+
+[node name="four" type="Sprite" parent="TitleStuff"]
+visible = false
+position = Vector2( 904.818, 685.757 )
+texture = ExtResource( 11 )
+
+[node name="all" type="Sprite" parent="TitleStuff"]
+visible = false
+position = Vector2( 904.818, 685.757 )
+texture = ExtResource( 14 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/show = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 776.239, 184.138 )
+texture = ExtResource( 4 )
+
+[node name="Button" type="Button" parent="."]
+visible = false
+margin_left = 1411.94
+margin_top = 856.937
+margin_right = 1586.94
+margin_bottom = 889.937
+text = "Reset Progress"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

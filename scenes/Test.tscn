@@ -1,0 +1,111 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+enum {
+	FMA_VOL,
+	FMA_VIBRATO,
+	FMA_PARTIALS,
+	FMA_PARTIALS_WOBBLE,
+	FMA_BASE_WAVE_TYPE,
+	FMA_PARTIALS_WAVE_TYPE,
+	FMA_FM_RATIO,
+	FMA_FM_AMP,
+	FMA_GLIDE,
+	FMA_ATTACK,
+	FMA_DECAY,
+	FMA_SUSTAIN
+}
+
+var inst : FMASynthStream
+
+var filter_level = 0
+var env_filter_amt = 0
+
+func _ready():
+	OS.open_midi_inputs()
+#	var dir = Directory.new()
+#	dir.open(\"user://\")
+#	dir.make_dir(\"pd\")
+#	var f1 = File.new()
+#	print(f1.file_exists(\"res://pd/main.pd\"))
+#	f1.open(\"res://pd/main.pd\", File.READ)
+#	var content = f1.get_as_text()
+#	f1.close()
+#	#print(content)2
+#	var f2 = File.new()
+#	f2.open(\"user://pd/main.pd\", File.WRITE)
+#	f2.store_string(content)
+#	f2.close()
+	inst = FMASynthStream.new()
+	$AudioStreamPlayer.stream = inst
+	$AudioStreamPlayer.play()
+
+func _process(_delta):
+	var e = inst.get_amp()
+	AudioServer.get_bus_effect(1,0).cutoff_hz = filter_level + (e * env_filter_amt)
+	
+
+func mtof(var midi_note):
+	return 440.0 * pow(2.0, (midi_note - 69.0) / 12.0)
+
+func _unhandled_input(event):
+	if (event is InputEventMIDI):
+		match event.message:
+			MIDI_MESSAGE_NOTE_ON:
+				if event.channel == 8:
+					match event.pitch:
+						20:
+							inst.set_param(FMA_BASE_WAVE_TYPE, 0)
+						21:
+							inst.set_param(FMA_BASE_WAVE_TYPE, 1)
+						22:
+							inst.set_param(FMA_BASE_WAVE_TYPE, 2)
+						23:
+							inst.set_param(FMA_BASE_WAVE_TYPE, 4)
+						16:
+							inst.set_param(FMA_PARTIALS_WAVE_TYPE, 0)
+						17:
+							inst.set_param(FMA_PARTIALS_WAVE_TYPE, 1)
+						18:
+							inst.set_param(FMA_PARTIALS_WAVE_TYPE, 2)
+						19:
+							inst.set_param(FMA_PARTIALS_WAVE_TYPE, 4)
+				else:
+					inst.note_on(event.pitch, event.velocity / 127.0)
+			MIDI_MESSAGE_NOTE_OFF:
+				inst.note_off(event.pitch)
+			MIDI_MESSAGE_CONTROL_CHANGE:
+				var v = event.controller_value / 127.0
+				if event.controller_number == 48:
+					inst.set_param(FMA_PARTIALS, v)
+				if event.controller_number == 49:
+					inst.set_param(FMA_VOL, v)
+				if event.controller_number == 50:
+					filter_level = v * v * 2500
+				if event.controller_number == 51:
+					AudioServer.get_bus_effect(1,0).resonance = v
+
+				if event.controller_number == 64:
+					inst.set_param(FMA_PARTIALS_WOBBLE, v)
+				if event.controller_number == 65:
+					inst.set_param(FMA_FM_RATIO, v)
+				if event.controller_number == 66:
+					inst.set_param(FMA_FM_AMP, v)
+				if event.controller_number == 67:
+					env_filter_amt = v * v * 2000
+				
+				if event.controller_number == 16:
+					inst.set_param(FMA_VIBRATO, v)
+
+"
+
+[node name="Test" type="Control"]
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = "Env1"
