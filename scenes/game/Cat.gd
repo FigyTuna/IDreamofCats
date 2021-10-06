@@ -87,9 +87,11 @@ const CAT_PRESETS = {
 		"transfer_speed": 0.7
 	},
 	"paworange": {
+		"scale": 1.4,
 		"transfer_speed": 0.7
 	},
 	"pawspots": {
+		"scale": 1.4,
 		"transfer_speed": 0.7
 	},
 	"rope": {

@@ -89,7 +89,7 @@ const MAP = {
 		"max_spawned": 7,
 		"shader": [
 			0.4, 20.0, 2.0, 0.2, 1.0, 1.1, Vector2(1.0, 0.0), 0.06, true, 0.2, 6,
-			0.1, 5.0, 2.0, 0.5, 1.0, 2.0, Vector2(-0.2, 1.0), 0.06, true, 0.05, 6,
+			0.1, 30.0, 2.0, 5.5, 1.5, 0.4, Vector2(-0.2, 1.0), 0.06, true, 0.05, 3,
 			Color(0.105882, 0.003922, 0.392157), 4, 3
 		],
 		"cats": [
@@ -134,16 +134,14 @@ const MAP = {
 			Color(0.294118, 0.780392, 0.345098), 4, 1
 		],
 		"cats": [
-			{"preset": "bat", "dest": "void", "chance": 0, "req": 5},
-			{"preset": "paworange", "dest": "three", "chance": 1},
-			{"preset": "paw", "dest": "one", "chance": 1},
+			{"preset": "bat", "dest": "void", "chance": 0, "req": 4},
 			{"preset": "rope", "dest": "point", "chance": 1},
 			{"preset": "bone", "dest": "point", "chance": 1},
 			{"preset": "flower", "dest": "point", "chance": 3},
 			{"preset": "tennis", "dest": "point", "chance": 1},
 			{"preset": "sock", "dest": "point", "chance": 1},
 			{"preset": "collar", "dest": "unpoint", "chance": 2},
-			{"preset": "cat1", "dest": "end", "ending": 0, "music": "B3", "chance": 1, "req": 2}
+			{"preset": "cat1", "dest": "end", "ending": 0, "music": "B3", "chance": 1, "req": 3}
 		]
 	},
 	"A": {
@@ -157,8 +155,6 @@ const MAP = {
 		],
 		"cats": [
 			{"preset": "bat", "dest": "void", "chance": 0, "req": 3},
-			{"preset": "paworange", "dest": "three", "chance": 1},
-			{"preset": "pawspots", "dest": "two", "chance": 1},
 			{"preset": "food", "dest": "point", "chance": 4},
 			{"preset": "water", "dest": "point", "chance": 4},
 			{"preset": "syringe", "dest": "unpoint", "chance": 12},
@@ -175,7 +171,7 @@ const MAP = {
 			Color(0.623529, 0.482353, 0.623529), 0, 3
 		],
 		"cats": [
-			{"preset": "bat", "dest": "void", "chance": 0, "req": 5},
+			{"preset": "bat", "dest": "void", "chance": 0, "req": 8},
 			{"preset": "syringe", "dest": "unpoint", "chance": 8},
 			{"preset": "collar", "dest": "unpoint", "chance": 6},
 			{"preset": "sock", "dest": "point", "chance": 5},
@@ -197,12 +193,10 @@ const MAP = {
 		],
 		"cats": [
 			{"preset": "bat", "dest": "void", "chance": 0, "req": 2},
-			{"preset": "paw", "dest": "one", "chance": 1},
-			{"preset": "pawgrey", "dest": "four", "chance": 1},
 			{"preset": "steak", "dest": "point", "chance": 4},
 			{"preset": "boot", "dest": "point", "chance": 2},
 			{"preset": "bone", "dest": "point", "chance": 2},
-			{"preset": "zzz", "dest": "MM", "chance": 2, "req": 2},
+			{"preset": "zzz", "dest": "MM", "chance": 1, "req": 3},
 		]
 	},
 	"MM": {
@@ -220,7 +214,7 @@ const MAP = {
 			{"preset": "zzz", "dest": "point", "chance": 3},
 			{"preset": "sock", "dest": "point", "chance": 1},
 			{"preset": "bone", "dest": "point", "chance": 1},
-			{"preset": "cat3", "dest": "end", "ending": 2, "music": "My3", "chance": 1, "req": 2}
+			{"preset": "cat3", "dest": "end", "ending": 2, "music": "My3", "chance": 1, "req": 3}
 		]
 	},
 	"void": {
@@ -278,7 +272,7 @@ const MAP = {
 			{"preset": "sock", "dest": "point", "chance": 2},
 			{"preset": "rope", "dest": "point", "chance": 2},
 			{"preset": "zzz", "dest": "point", "chance": 2},
-			{"preset": "cat5", "dest": "end", "ending": 4, "music": "final1", "chance": 0, "req": 10}
+			{"preset": "cat5", "dest": "end", "ending": 4, "music": "final1", "chance": 0, "req": 20}
 		]
 	}
 }
